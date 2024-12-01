@@ -2,55 +2,53 @@
 pipeline {
     agent agent-kovu
     
-    
-        stages {
+    stages {
         stage('SCM Checkout') {
-            steps{
-             gitCheckout()
+            steps {
+                gitCheckout()
             }
         }
 
-       stage ('Compile') {
-                        steps {
+        stage('Compile') {
+            steps {
                 mvnCompile()
-              }
-          }
+            }
+        }
+
         stage('Validate') {
             steps { 
-             mvnValidate()
-  
+                mvnValidate()
             }
         }
 
-      stage('Test') {
+        stage('Test') {
             steps {
-              mvnTest()
+                mvnTest()
             }
         }
-       stage('Build') {
+
+        stage('Build') {
             steps { 
- 
-             mvnInstall()
+                mvnInstall()
             }
         }
+
         stage('Deploy to DEV') {
             steps {
-                deplyDev()
-                }
+                deployDev()
             }
-        }  
+        }
+
         stage('Deploy to Stage') {
             steps {
                 deployStage()
-                }
             }
-        }    
-        
+        }
+
         stage('Deploy to Prod') {
             steps {
                 deployProd()
-                }
             }
-        }    
+        }
     }
 }
