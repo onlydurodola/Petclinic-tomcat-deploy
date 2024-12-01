@@ -1,4 +1,4 @@
-@Library('Jenkins_library')_
+@Library('interesting-kovu')_
 pipeline {
     agent agent-kovu
     
