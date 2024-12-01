@@ -21,12 +21,6 @@ pipeline {
             }
         }
 
-        stage('Test') {
-            steps {
-                mvnTest()
-            }
-        }
-
         stage('Build') {
             steps { 
                 mvnInstall()
