@@ -1,6 +1,6 @@
 @Library('interesting-kovu')_
 pipeline {
-    agent agent-kovu
+    agent-kovu
     
     stages {
         stage('SCM Checkout') {
