@@ -1,4 +1,4 @@
-@Library('sept-shared-lib')_
+@Library('Jenkins_library')_
 pipeline {
     agent agent-kovu
     
