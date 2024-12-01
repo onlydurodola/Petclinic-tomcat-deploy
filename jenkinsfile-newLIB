@@ -1,12 +1,7 @@
 @Library('interesting-kovu')_
-
 pipeline {
     agent any
-
-    tools {
-        maven 'Maven 3.6'
-    }
-
+    
     stages {
         stage('SCM Checkout') {
             steps {
