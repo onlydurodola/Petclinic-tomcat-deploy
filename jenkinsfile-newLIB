@@ -20,7 +20,11 @@ pipeline {
                 mvnValidate()
             }
         }
-
+         stage('Validate') {
+            steps { 
+                mvnTest()
+            }
+        }
         stage('Build') {
             steps { 
                 mvnInstall()
